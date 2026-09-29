@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: yt-project-root
+  namespace: argocd
+spec:
+  project: default
+
+  sources:
+    - repoURL: https://github.com/vedbobade/yt-AppsforApp-project-frontend.git
+      targetRevision: main
+      path: argo
+
+    - repoURL: https://github.com/vedbobade/yt-AppsforApp-project-backend.git
+      targetRevision: main
+      path: argo
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

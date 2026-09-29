@@ -8,11 +8,11 @@ spec:
 
   sources:
     - repoURL: https://github.com/vedbobade/yt-AppsforApp-project-frontend.git
-      targetRevision: main
+      targetRevision: HEAD
       path: argo
 
     - repoURL: https://github.com/vedbobade/yt-AppsforApp-project-backend.git
-      targetRevision: main
+      targetRevision: HEAD
       path: argo
 
   destination:
